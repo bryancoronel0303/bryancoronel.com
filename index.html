@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bryan Coronel</title>
+	<style>
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+		
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+			line-height: 1.7;
+			color: #1a1a1a;
+			background: #0f172a;
+			min-height: 100vh;
+		}
+		
+		.hero {
+			background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.85)), url('bg.jpg') center/cover;
+			padding: 6rem 2rem;
+			text-align: center;
+			color: white;
+		}
+		
+		.hero .headshot {
+			width: 180px;
+			height: 220px;
+			object-fit: cover;
+			border-radius: 12px;
+			border: 4px solid rgba(255,255,255,0.2);
+			margin-bottom: 1.5rem;
+		}
+		
+		.hero h1 {
+			font-size: 2.8rem;
+			font-weight: 700;
+			margin-bottom: 0.5rem;
+		}
+		
+		.hero .title {
+			color: #38bdf8;
+			font-size: 1.2rem;
+			font-weight: 500;
+			margin-bottom: 1rem;
+		}
+		
+		.hero .tagline {
+			color: rgba(255,255,255,0.7);
+			font-size: 1rem;
+			max-width: 500px;
+			margin: 0 auto;
+		}
+		
+		.container {
+			max-width: 900px;
+			margin: 0 auto;
+			padding: 0 2rem;
+		}
+		
+		section {
+			padding: 4rem 0;
+		}
+		
+		section:nth-child(odd) {
+			background: #1e293b;
+		}
+		
+		section:nth-child(even) {
+			background: #0f172a;
+		}
+		
+		h2 {
+			font-size: 1.8rem;
+			font-weight: 700;
+			margin-bottom: 1.5rem;
+			color: white;
+		}
+		
+		h3 {
+			font-size: 1.1rem;
+			font-weight: 600;
+			margin: 2rem 0 0.8rem;
+			color: #38bdf8;
+		}
+		
+		p { margin-bottom: 1rem; color: rgba(255,255,255,0.8); }
+		
+		ul {
+			list-style: none;
+			padding: 0;
+		}
+		
+		ul li {
+			padding: 0.4rem 0;
+			color: rgba(255,255,255,0.8);
+		}
+		
+		.family-photo {
+			width: 100%;
+			max-width: 400px;
+			border-radius: 12px;
+			margin: 1.5rem 0;
+			box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+		}
+		
+		.travel-flags {
+			font-size: 1.6em;
+			letter-spacing: 0.3em;
+			margin: 1rem 0;
+		}
+		
+		.jobs-grid {
+			display: grid;
+			gap: 1.5rem;
+		}
+		
+		.job {
+			background: rgba(255,255,255,0.05);
+			padding: 1.5rem;
+			border-radius: 12px;
+			border-left: 4px solid #38bdf8;
+		}
+		
+		.job-title {
+			font-weight: 600;
+			color: white;
+			font-size: 1.1rem;
+		}
+		
+		.job-company {
+			color: #38bdf8;
+		}
+		
+		.job-date {
+			color: rgba(255,255,255,0.5);
+			font-size: 0.85rem;
+			margin-bottom: 0.5rem;
+		}
+		
+		.job p {
+			margin: 0;
+			font-size: 0.95rem;
+		}
+		
+		.skills {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.6rem;
+			margin: 1rem 0;
+		}
+		
+		.skills span {
+			background: #38bdf8;
+			color: #0f172a;
+			padding: 0.5rem 1rem;
+			border-radius: 6px;
+			font-size: 0.85rem;
+			font-weight: 600;
+		}
+		
+		.education-card {
+			background: rgba(255,255,255,0.05);
+			padding: 1.5rem;
+			border-radius: 12px;
+			margin-top: 1rem;
+		}
+		
+		.education-card p { margin: 0.3rem 0; }
+		
+		.visual-break {
+			height: 300px;
+			background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.5)), url('bg.jpg') center/cover fixed;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.visual-break blockquote {
+			color: white;
+			font-size: 1.4rem;
+			font-style: italic;
+			text-align: center;
+			max-width: 600px;
+			padding: 0 2rem;
+		}
+		
+		.contact-links {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1rem;
+			margin-top: 1.5rem;
+		}
+		
+		.contact-links a {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+			background: #38bdf8;
+			color: #0f172a;
+			padding: 1rem 1.8rem;
+			border-radius: 8px;
+			text-decoration: none;
+			font-weight: 600;
+			transition: transform 0.2s, box-shadow 0.2s;
+		}
+		
+		.contact-links a:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 5px 20px rgba(56, 189, 248, 0.3);
+		}
+		
+		footer {
+			background: #0f172a;
+			text-align: center;
+			padding: 2rem;
+			color: rgba(255,255,255,0.4);
+			font-size: 0.9rem;
+		}
+		
+		.reading-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 1rem;
+			margin: 1rem 0;
+		}
+		
+		.book-card {
+			background: rgba(255,255,255,0.05);
+			padding: 1.2rem;
+			border-radius: 8px;
+			border-left: 3px solid #38bdf8;
+		}
+		
+		.book-title {
+			color: white;
+			font-weight: 600;
+			margin: 0 0 0.3rem 0;
+		}
+		
+		.book-author {
+			color: rgba(255,255,255,0.5);
+			font-size: 0.9rem;
+			margin: 0;
+		}
+		
+		.blog-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+			gap: 1.5rem;
+			margin: 1rem 0;
+		}
+		
+		.blog-card {
+			background: rgba(255,255,255,0.05);
+			padding: 1.5rem;
+			border-radius: 12px;
+			text-decoration: none;
+			transition: transform 0.2s, background 0.2s;
+			display: block;
+		}
+		
+		.blog-card:hover {
+			background: rgba(255,255,255,0.08);
+			transform: translateY(-2px);
+		}
+		
+		.blog-date {
+			color: #38bdf8;
+			font-size: 0.8rem;
+			margin: 0 0 0.5rem 0;
+		}
+		
+		.blog-title {
+			color: white;
+			font-weight: 600;
+			font-size: 1.1rem;
+			margin: 0 0 0.5rem 0;
+		}
+		
+		.blog-excerpt {
+			color: rgba(255,255,255,0.6);
+			font-size: 0.9rem;
+			margin: 0;
+		}
+		
+		@media (max-width: 650px) {
+			.hero h1 { font-size: 2rem; }
+			.contact-links { flex-direction: column; }
+			.contact-links a { justify-content: center; }
+			.family-photo { max-width: 100%; }
+		}
+	</style>
+</head>
+<body>
+	
+	<!-- Hero -->
+	<header class="hero">
+		<img src="headshot.jpg" alt="Bryan Coronel" class="headshot">
+		<h1>Bryan Coronel</h1>
+		<div class="title">Senior Analytics Engineer @ Disney Streaming</div>
+		<p class="tagline">Building models that inform multi-million dollar content decisions.</p>
+	</header>
+
+	<!-- What I Do -->
+	<section>
+		<div class="container">
+			<h2>What I Do</h2>
+			
+			<div class="jobs-grid">
+				<div class="job">
+					<div class="job-title"><span class="job-company">Disney Streaming</span>, Senior Analytics Engineer</div>
+					<div class="job-date">2026 – Present</div>
+					<p>Time series forecasting for subscriber health signals, LTV modeling, watch time analytics. Integrating Snowflake Agentic AI to bridge analytics and creative teams.</p>
+				</div>
+				
+				<div class="job">
+					<div class="job-title"><span class="job-company">Capital One</span>, Data Analyst</div>
+					<div class="job-date">2024 – 2026</div>
+					<p>Fraud detection dashboards, ETL pipelines (100M+ rows/week), database schemas for 50M+ daily events. Reduced risk events 15%.</p>
+				</div>
+				
+				<div class="job">
+					<div class="job-title"><span class="job-company">Fiserv</span>, Software Engineer</div>
+					<div class="job-date">2023 – 2024</div>
+					<p>AWS cloud migration, microservices architecture. 3x scalability, 60% latency reduction.</p>
+				</div>
+			</div>
+
+			<h3>Skills</h3>
+			<div class="skills">
+				<span>Python</span>
+				<span>SQL</span>
+				<span>PySpark</span>
+				<span>Snowflake</span>
+				<span>AWS</span>
+				<span>PyTorch</span>
+				<span>Tableau</span>
+				<span>Docker</span>
+			</div>
+
+			<h3>Education</h3>
+			<div class="education-card">
+				<p><strong style="color: white;">Washington University in St. Louis</strong></p>
+				<p>MS Data Analytics & Statistics · BS Chemical Engineering · CS Minor</p>
+				<p style="color: #38bdf8;">AWS Certified Solutions Architect</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Visual Break -->
+	<div class="visual-break">
+		<blockquote>"You miss 100% of the shots you don't take. — Wayne Gretzky"<br/><span style="font-size: 0.8em; opacity: 0.7;">— Michael Scott</span></blockquote>
+	</div>
+
+	<!-- Who I Am -->
+	<section>
+		<div class="container">
+			<h2>Who I Am</h2>
+			<p>NYC metro. First gen. Ecuadorian. QuestBridge Scholar.</p>
+			<p>I do a lot of firsts in my family, and I'm making sure I'm not the last.</p>
+			
+			<img src="family.jpg" alt="Graduation with sisters" class="family-photo">
+
+			<h3>Outside of Work</h3>
+			<ul>
+				<li>📚 Trying to read a book a month (emphasis on trying)</li>
+				<li>⚽ Indoor soccer, working on my right foot</li>
+				<li>🎷 Relearning saxophone, flirting with DJing</li>
+				<li>🎸 Learning <a href="https://youtu.be/TZl0MHwgn8c?si=XaRnL1Ttj13ym8oo&t=70" style="color: #38bdf8;">guitar</a> and <a href="https://youtu.be/Dd-wRd4QGsw?si=4GN8WheVX2vIV27H&t=237" style="color: #38bdf8;">piano</a></li>
+				<li>👔 Exploring <a href="https://youtu.be/iJzfaRUNvHQ?si=63DGDWAjcsZTzCXC&t=394" style="color: #38bdf8;">personal style</a></li>
+				<li>🍜 Always hunting for the next great restaurant</li>
+				<li>🐓 Tottenham til I die (pain included)</li>
+			</ul>
+
+			<h3>Places I've Been</h3>
+			<div class="travel-flags">🇪🇨 🇬🇹 🇪🇸 🇩🇪 🇨🇿 🇳🇱 🇵🇱 🇱🇻 🇱🇹 🇪🇪 🇫🇮</div>
+			
+			<p><strong style="color: #38bdf8;">Languages:</strong> English · Spanish · Portuguese</p>
+		</div>
+	</section>
+
+	<!-- Currently Reading / Learning - COMMENTED OUT FOR FUTURE USE
+	<section>
+		<div class="container">
+			<h2>What I'm Into</h2>
+			
+			<h3>Currently Reading</h3>
+			<div class="reading-grid">
+				<div class="book-card">
+					<p class="book-title">Book Title Here</p>
+					<p class="book-author">Author Name</p>
+				</div>
+				<div class="book-card">
+					<p class="book-title">Book Title Here</p>
+					<p class="book-author">Author Name</p>
+				</div>
+			</div>
+
+			<h3>Recently Learned</h3>
+			<ul>
+				<li>📝 Topic or skill you recently picked up</li>
+				<li>📝 Another thing you learned</li>
+			</ul>
+
+			<h3>Blog Posts</h3>
+			<div class="blog-grid">
+				<a href="#" class="blog-card">
+					<p class="blog-date">May 2026</p>
+					<p class="blog-title">Post Title Here</p>
+					<p class="blog-excerpt">A short description of what this post is about...</p>
+				</a>
+				<a href="#" class="blog-card">
+					<p class="blog-date">April 2026</p>
+					<p class="blog-title">Another Post Title</p>
+					<p class="blog-excerpt">A short description of what this post is about...</p>
+				</a>
+			</div>
+		</div>
+	</section>
+	-->
+
+	<!-- Contact -->
+	<section>
+		<div class="container">
+			<h2>Get In Touch</h2>
+			<p>Always down to chat about data, soccer, or restaurant recs.</p>
+			<div class="contact-links">
+				<a href="mailto:bryancoronel0303@gmail.com">✉️ Email</a>
+				<a href="https://www.linkedin.com/in/bryancoronel1/">💼 LinkedIn</a>
+				<a href="https://github.com/bryancoronel0303">💻 GitHub</a>
+				<a href="https://drive.google.com/file/d/1m9f0cruxooIHcGEZCYrua9d1kyQfGxIz/view">📄 Resume</a>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<p>&copy; Bryan Coronel</p>
+	</footer>
+
+</body>
+</html>
