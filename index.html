@@ -10,319 +10,180 @@
 		body {
 			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 			line-height: 1.7;
-			color: #1a1a1a;
 			background: #0f172a;
 			min-height: 100vh;
 		}
-		
+
 		.hero {
-			background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.85)), url('bg.jpg') center/cover;
-			padding: 6rem 2rem;
+			background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+			padding: 5rem 2rem 4rem;
 			text-align: center;
 			color: white;
+			border-bottom: 1px solid rgba(56, 189, 248, 0.12);
 		}
-		
 		.hero .headshot {
-			width: 180px;
-			height: 220px;
+			width: 160px;
+			height: 200px;
 			object-fit: cover;
 			border-radius: 12px;
-			border: 4px solid rgba(255,255,255,0.2);
+			border: 3px solid rgba(56, 189, 248, 0.2);
 			margin-bottom: 1.5rem;
+			filter: grayscale(0.1);
 		}
-		
 		.hero h1 {
 			font-size: 2.8rem;
 			font-weight: 700;
-			margin-bottom: 0.5rem;
+			margin-bottom: 0.3rem;
+			letter-spacing: -0.02em;
 		}
-		
 		.hero .title {
 			color: #38bdf8;
-			font-size: 1.2rem;
+			font-size: 1.15rem;
 			font-weight: 500;
-			margin-bottom: 1rem;
 		}
-		
-		.hero .tagline {
-			color: rgba(255,255,255,0.7);
-			font-size: 1rem;
-			max-width: 500px;
-			margin: 0 auto;
-		}
-		
-		.container {
-			max-width: 900px;
-			margin: 0 auto;
-			padding: 0 2rem;
-		}
-		
-		section {
-			padding: 4rem 0;
-		}
-		
-		section:nth-child(odd) {
-			background: #1e293b;
-		}
-		
-		section:nth-child(even) {
-			background: #0f172a;
-		}
-		
+
+		.container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+
+		section { padding: 4rem 0; }
+		section:nth-child(odd) { background: #1e293b; }
+		section:nth-child(even) { background: #0f172a; }
+
 		h2 {
 			font-size: 1.8rem;
 			font-weight: 700;
 			margin-bottom: 1.5rem;
 			color: white;
 		}
-		
 		h3 {
-			font-size: 1.1rem;
+			font-size: 1.05rem;
 			font-weight: 600;
 			margin: 2rem 0 0.8rem;
 			color: #38bdf8;
 		}
-		
-		p { margin-bottom: 1rem; color: rgba(255,255,255,0.8); }
-		
-		ul {
-			list-style: none;
-			padding: 0;
-		}
-		
-		ul li {
-			padding: 0.4rem 0;
-			color: rgba(255,255,255,0.8);
-		}
-		
-		.family-photo {
-			width: 100%;
-			max-width: 400px;
-			border-radius: 12px;
-			margin: 1.5rem 0;
-			box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-		}
-		
-		.travel-flags {
-			font-size: 1.6em;
-			letter-spacing: 0.3em;
-			margin: 1rem 0;
-		}
-		
-		.jobs-grid {
-			display: grid;
-			gap: 1.5rem;
-		}
-		
+		p { margin-bottom: 0.9rem; color: rgba(255,255,255,0.78); line-height: 1.8; }
+
+		.jobs-grid { display: grid; gap: 1.5rem; }
 		.job {
-			background: rgba(255,255,255,0.05);
+			background: rgba(255,255,255,0.04);
 			padding: 1.5rem;
-			border-radius: 12px;
-			border-left: 4px solid #38bdf8;
+			border-radius: 10px;
+			border-left: 3px solid #38bdf8;
+			transition: background 0.2s;
 		}
-		
-		.job-title {
-			font-weight: 600;
-			color: white;
-			font-size: 1.1rem;
-		}
-		
-		.job-company {
-			color: #38bdf8;
-		}
-		
-		.job-date {
-			color: rgba(255,255,255,0.5);
-			font-size: 0.85rem;
-			margin-bottom: 0.5rem;
-		}
-		
-		.job p {
-			margin: 0;
-			font-size: 0.95rem;
-		}
-		
+		.job:hover { background: rgba(255,255,255,0.07); }
+		.job-title { font-weight: 600; color: white; font-size: 1.05rem; }
+		.job-company { color: #38bdf8; }
+		.job-date { color: rgba(255,255,255,0.4); font-size: 0.82rem; margin-bottom: 0.5rem; }
+		.job p { margin: 0; font-size: 0.92rem; }
+
 		.skills {
 			display: flex;
 			flex-wrap: wrap;
 			gap: 0.6rem;
 			margin: 1rem 0;
 		}
-		
 		.skills span {
-			background: #38bdf8;
-			color: #0f172a;
-			padding: 0.5rem 1rem;
+			background: rgba(56, 189, 248, 0.1);
+			color: #7dd3fc;
+			padding: 0.45px 1rem;
 			border-radius: 6px;
-			font-size: 0.85rem;
-			font-weight: 600;
+			font-size: 0.82rem;
+			font-weight: 500;
+			border: 1px solid rgba(56, 189, 248, 0.15);
 		}
-		
+
 		.education-card {
-			background: rgba(255,255,255,0.05);
+			background: rgba(255,255,255,0.04);
 			padding: 1.5rem;
-			border-radius: 12px;
+			border-radius: 10px;
 			margin-top: 1rem;
 		}
-		
-		.education-card p { margin: 0.3rem 0; }
-		
-		.visual-break {
-			height: 300px;
-			background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.5)), url('bg.jpg') center/cover fixed;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+		.education-card p { margin: 0.25rem 0; }
+
+		.interests-list {
+			list-style: none;
+			padding: 0;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 0.5rem;
 		}
-		
-		.visual-break blockquote {
-			color: white;
-			font-size: 1.4rem;
-			font-style: italic;
-			text-align: center;
-			max-width: 600px;
-			padding: 0 2rem;
+		.interests-list li {
+			padding: 0.5rem 0.75rem;
+			color: rgba(255,255,255,0.75);
+			font-size: 0.92rem;
+			background: rgba(255,255,255,0.03);
+			border-radius: 6px;
 		}
-		
-		.contact-links {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 1rem;
-			margin-top: 1.5rem;
-		}
-		
+		.interests-list a { color: #38bdf8; text-decoration: none; }
+		.interests-list a:hover { text-decoration: underline; }
+
+		.contact-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
 		.contact-links a {
 			display: inline-flex;
 			align-items: center;
 			gap: 0.5rem;
 			background: #38bdf8;
 			color: #0f172a;
-			padding: 1rem 1.8rem;
+			padding: 0.9rem 1.6rem;
 			border-radius: 8px;
 			text-decoration: none;
 			font-weight: 600;
+			font-size: 0.92rem;
 			transition: transform 0.2s, box-shadow 0.2s;
 		}
-		
 		.contact-links a:hover {
 			transform: translateY(-2px);
 			box-shadow: 0 5px 20px rgba(56, 189, 248, 0.3);
 		}
-		
+
 		footer {
 			background: #0f172a;
 			text-align: center;
 			padding: 2rem;
-			color: rgba(255,255,255,0.4);
-			font-size: 0.9rem;
+			color: rgba(255,255,255,0.3);
+			font-size: 0.85rem;
+			border-top: 1px solid rgba(255,255,255,0.05);
 		}
-		
-		.reading-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-			gap: 1rem;
-			margin: 1rem 0;
-		}
-		
-		.book-card {
-			background: rgba(255,255,255,0.05);
-			padding: 1.2rem;
-			border-radius: 8px;
-			border-left: 3px solid #38bdf8;
-		}
-		
-		.book-title {
-			color: white;
-			font-weight: 600;
-			margin: 0 0 0.3rem 0;
-		}
-		
-		.book-author {
-			color: rgba(255,255,255,0.5);
-			font-size: 0.9rem;
-			margin: 0;
-		}
-		
-		.blog-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-			gap: 1.5rem;
-			margin: 1rem 0;
-		}
-		
-		.blog-card {
-			background: rgba(255,255,255,0.05);
-			padding: 1.5rem;
-			border-radius: 12px;
-			text-decoration: none;
-			transition: transform 0.2s, background 0.2s;
-			display: block;
-		}
-		
-		.blog-card:hover {
-			background: rgba(255,255,255,0.08);
-			transform: translateY(-2px);
-		}
-		
-		.blog-date {
-			color: #38bdf8;
-			font-size: 0.8rem;
-			margin: 0 0 0.5rem 0;
-		}
-		
-		.blog-title {
-			color: white;
-			font-weight: 600;
-			font-size: 1.1rem;
-			margin: 0 0 0.5rem 0;
-		}
-		
-		.blog-excerpt {
-			color: rgba(255,255,255,0.6);
-			font-size: 0.9rem;
-			margin: 0;
-		}
-		
+
 		@media (max-width: 650px) {
 			.hero h1 { font-size: 2rem; }
+			.hero { padding: 3rem 1.5rem 2.5rem; }
 			.contact-links { flex-direction: column; }
 			.contact-links a { justify-content: center; }
-			.family-photo { max-width: 100%; }
+			.interests-list { grid-template-columns: 1fr; }
 		}
 	</style>
 </head>
 <body>
-	
-	<!-- Hero -->
+
 	<header class="hero">
 		<img src="headshot.jpg" alt="Bryan Coronel" class="headshot">
 		<h1>Bryan Coronel</h1>
 		<div class="title">Senior Analytics Engineer @ Disney Streaming</div>
-		<p class="tagline">Building models that inform multi-million dollar content decisions.</p>
 	</header>
 
-	<!-- What I Do -->
+	<!-- Experience -->
 	<section>
 		<div class="container">
-			<h2>What I Do</h2>
+			<h2>Experience</h2>
 			
 			<div class="jobs-grid">
 				<div class="job">
 					<div class="job-title"><span class="job-company">Disney Streaming</span>, Senior Analytics Engineer</div>
 					<div class="job-date">2026 – Present</div>
-					<p>Time series forecasting for subscriber health signals, LTV modeling, watch time analytics. Integrating Snowflake Agentic AI to bridge analytics and creative teams.</p>
+					<p>Building the $1B content investment forecasting model — exponential decay time series, explainable ML on content slate data. Driving defensible analytics that inform multi-million dollar content decisions.</p>
 				</div>
 				
 				<div class="job">
 					<div class="job-title"><span class="job-company">Capital One</span>, Data Analyst</div>
 					<div class="job-date">2024 – 2026</div>
-					<p>Fraud detection dashboards, ETL pipelines (100M+ rows/week), database schemas for 50M+ daily events. Reduced risk events 15%.</p>
+					<p>Controls & risk analytics, Venture X credit marketing segmentation. Designed pipelines and dashboards handling 50M+ daily events across marketing risk and fraud detection.</p>
 				</div>
 				
 				<div class="job">
 					<div class="job-title"><span class="job-company">Fiserv</span>, Software Engineer</div>
 					<div class="job-date">2023 – 2024</div>
-					<p>AWS cloud migration, microservices architecture. 3x scalability, 60% latency reduction.</p>
+					<p>AWS migration workflows — transitioning legacy infrastructure to cloud-native microservices. Delivered 3x scalability improvement, 60% latency reduction.</p>
 				</div>
 			</div>
 
@@ -342,82 +203,44 @@
 			<div class="education-card">
 				<p><strong style="color: white;">Washington University in St. Louis</strong></p>
 				<p>MS Data Analytics & Statistics · BS Chemical Engineering · CS Minor</p>
-				<p style="color: #38bdf8;">AWS Certified Solutions Architect</p>
+				<p style="color: #7dd3fc;">AWS Certified Solutions Architect</p>
 			</div>
 		</div>
 	</section>
 
-	<!-- Visual Break -->
-	<div class="visual-break">
-		<blockquote>"You miss 100% of the shots you don't take. — Wayne Gretzky"<br/><span style="font-size: 0.8em; opacity: 0.7;">— Michael Scott</span></blockquote>
-	</div>
-
-	<!-- Who I Am -->
+	<!-- About -->
 	<section>
 		<div class="container">
-			<h2>Who I Am</h2>
-			<p>NYC metro. First gen. Ecuadorian. QuestBridge Scholar.</p>
-			<p>I do a lot of firsts in my family, and I'm making sure I'm not the last.</p>
-			
-			<img src="family.jpg" alt="Graduation with sisters" class="family-photo">
+			<h2>About</h2>
+			<p>NYC metro. First-gen graduate. Data professional since 2023.</p>
+			<p>
+				I'm an analytics engineer working across streaming, fintech, and banking —
+				building forecasting models, explainable ML, and data pipelines that drive
+				multi-million dollar decisions. At Disney, I work on the content investment strategy
+				model. At Capital One, I focused on controls, risk, and credit marketing analytics.
+				At Fiserv, I led AWS migration workflows.
+			</p>
+			<p>
+				Bilingual (English · Spanish), conversational Portuguese.
+			</p>
+		</div>
+	</section>
 
-			<h3>Outside of Work</h3>
-			<ul>
-				<li>📚 Trying to read a book a month (emphasis on trying)</li>
+	<!-- Outside of Work -->
+	<section>
+		<div class="container">
+			<h2>Outside of Work</h2>
+			<ul class="interests-list">
+				<li>📚 Trying to read a book a month</li>
 				<li>⚽ Indoor soccer, working on my right foot</li>
 				<li>🎷 Relearning saxophone, flirting with DJing</li>
-				<li>🎸 Learning <a href="https://youtu.be/TZl0MHwgn8c?si=XaRnL1Ttj13ym8oo&t=70" style="color: #38bdf8;">guitar</a> and <a href="https://youtu.be/Dd-wRd4QGsw?si=4GN8WheVX2vIV27H&t=237" style="color: #38bdf8;">piano</a></li>
-				<li>👔 Exploring <a href="https://youtu.be/iJzfaRUNvHQ?si=63DGDWAjcsZTzCXC&t=394" style="color: #38bdf8;">personal style</a></li>
+				<li>🎸 Learning <a href="https://youtu.be/TZl0MHwgn8c?si=XaRnL1Ttj13ym8oo&t=70">guitar</a> and <a href="https://youtu.be/Dd-wRd4QGsw?si=4GN8WheVX2vIV27H&t=237">piano</a></li>
+				<li>👔 Exploring <a href="https://youtu.be/iJzfaRUNvHQ?si=63DGDWAjcsZTzCXC&t=394">personal style</a></li>
 				<li>🍜 Always hunting for the next great restaurant</li>
 				<li>🐓 Tottenham til I die (pain included)</li>
 			</ul>
-
-			<h3>Places I've Been</h3>
-			<div class="travel-flags">🇪🇨 🇬🇹 🇪🇸 🇩🇪 🇨🇿 🇳🇱 🇵🇱 🇱🇻 🇱🇹 🇪🇪 🇫🇮</div>
-			
-			<p><strong style="color: #38bdf8;">Languages:</strong> English · Spanish · Portuguese</p>
 		</div>
 	</section>
-
-	<!-- Currently Reading / Learning - COMMENTED OUT FOR FUTURE USE
-	<section>
-		<div class="container">
-			<h2>What I'm Into</h2>
-			
-			<h3>Currently Reading</h3>
-			<div class="reading-grid">
-				<div class="book-card">
-					<p class="book-title">Book Title Here</p>
-					<p class="book-author">Author Name</p>
-				</div>
-				<div class="book-card">
-					<p class="book-title">Book Title Here</p>
-					<p class="book-author">Author Name</p>
-				</div>
-			</div>
-
-			<h3>Recently Learned</h3>
-			<ul>
-				<li>📝 Topic or skill you recently picked up</li>
-				<li>📝 Another thing you learned</li>
-			</ul>
-
-			<h3>Blog Posts</h3>
-			<div class="blog-grid">
-				<a href="#" class="blog-card">
-					<p class="blog-date">May 2026</p>
-					<p class="blog-title">Post Title Here</p>
-					<p class="blog-excerpt">A short description of what this post is about...</p>
-				</a>
-				<a href="#" class="blog-card">
-					<p class="blog-date">April 2026</p>
-					<p class="blog-title">Another Post Title</p>
-					<p class="blog-excerpt">A short description of what this post is about...</p>
-				</a>
-			</div>
-		</div>
-	</section>
-	-->
 
 	<!-- Contact -->
 	<section>
